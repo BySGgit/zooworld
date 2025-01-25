@@ -1,0 +1,507 @@
+@use "vars" as *
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.main
+		&--header 
+			.container
+				&::before
+					display: none
+				&::after
+					background-image: url(../img/header_littleplanet_mob.png), url(../img/star_pets1.svg)
+					background-size: 60px 57px, 9px 9px
+					background-position: center center, bottom left
+					width: 60px
+					height: 57px
+					right: 20px
+			&__wrapper 
+				&::before
+					background-image: url(../img/header_planet_mob.png), url(../img/star_pets1.svg)
+					background-size: 108px 102px, 9px 9px
+					background-position: center center, top right
+					width: 108px
+					height: 102px
+					left: 20px
+		&--stages
+			&::after, &::before
+				display: none
+			&__wrapper 
+				&::after
+					display: none
+			&__text
+				span
+					font-size: 24px
+
+@media only screen and (max-width : 1101px)
+	.hidden
+		top: auto
+		bottom: 0
+	.main
+		&--planets
+			&__slider
+				.splide
+					&__track
+						transform: translateX(60px)
+		&--pets
+			&__slider
+				.splide
+					&__track
+						transform: translateX(0px)
+			&__slide
+				align-items: flex-end
+				img
+					&.hidden
+						top: auto
+						bottom: 0
+						margin: 0
+				&.is-active
+					transform: scale(1)
+					img
+						&.hidden
+							top: auto
+							bottom: 0
+							margin: 0
+						&:not(.hidden)
+							top: auto
+							bottom: 0
+							margin: 0
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	body
+		font-size: 16px
+	.burger
+		display: flex
+	.logo
+		max-width: 45px
+		width: 45px
+	.button
+		min-width: 320px
+		a
+			font-size: 25px
+			min-height: 44px
+	.social
+		gap: 10px
+		li
+			width: 22px
+			height: 22px
+			a
+				svg, img 
+					width: 12px
+					height: 12px
+		&--big
+			li
+				width: 60px
+				height: 60px
+				background-color: $white
+				a
+					background-color: $white
+					border-color: $white
+					svg, img 
+						width: 26px
+						height: 26px
+	.section, section
+		padding-bottom: 90px
+	.h1, h1
+		font-size: 44px
+	.h2, h2
+		font-size: 34px
+	.h3, h3
+		font-size: 28px
+	.menu 
+		flex-direction: column
+		align-items: flex-start
+		justify-content: flex-start
+		gap: 70px
+		li
+			display: flex
+			align-items: center
+			gap: 10px
+			&::before
+				content: ''
+				display: block
+				background-image: url(../img/star_menu1.svg)
+				background-repeat: no-repeat
+				background-size: 20px 20px
+				width: 20px
+				height: 20px
+			&.active 
+				&::before
+					background-image: url(../img/star_menu.svg)
+		a
+			font-size: 20px
+	.splide 
+		&__pagination 
+			margin-top: 20px
+	.header 
+		padding: 5px 0 7px
+		min-height: 45px
+		&--wrapper
+			&__menu 
+				position: fixed
+				top: 45px
+				right: -100%
+				transition: right .3s ease
+				background-color: $accent
+				min-width: 360px
+				min-height: 510px
+				background-image: url(../img/wave1_mob.svg)
+				background-repeat: no-repeat
+				background-size: 360px 451px
+				background-position: top left
+				width: 360px
+				height: 451px
+				&.active 
+					right: 0
+				.menu
+					padding-top: 40px
+					padding-left: 30px
+					padding-right: 30px
+					align-items: flex-start
+					justify-content: flex-start
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					bottom: 60px
+					right: 20px
+					background-image: url(../img/header_planet_mob.png)
+					background-size: 108px 102px
+					background-repeat: no-repeat
+					width: 108px
+					height: 102px
+					z-index: 1
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					bottom: 0
+					right: 0
+					background-image: url(../img/wave2_mob.svg)
+					background-size: 350px 375px
+					background-repeat: no-repeat
+					width: 350px
+					height: 375px
+					z-index: 0
+			&__social 
+				margin-left: auto
+	.main
+		&--header
+			padding-top: 115px
+			&::before
+				content: ''
+				display: block
+				background-image: url(../img/header_wave.svg)
+				background-repeat: no-repeat
+				background-size: 100% 90%
+				width: 100%
+				height: 450px
+				position: absolute
+				top: 0
+				left: 0
+			.container
+				&::after
+					top: -37px
+			&__wrapper 
+				&::before
+					top: -55px
+					left: 0
+			&__image
+				max-width: 320px
+			&__text 
+				font-size: 16px
+				max-width: 253px
+		&--planets 
+			&__slider 
+				.splide
+					&__track 
+						transform: translateX(0)
+					&__slide
+						transform: rotate(0)
+						&.is-active
+							transform: rotate(0) scale(1) translateX(0)
+						&.is-visible
+							&.is-prev, &.is-next
+								transform: rotate(0)
+			&__slide 
+				&:not(.is-active)
+					opacity: 0.7
+		&--stages 
+			&__wrapper 
+				flex-direction: column
+				justify-content: center
+				align-items: center
+			&__item 
+				max-width: 320px
+				flex: 1 1 320px
+				&:nth-child(2)
+					padding-top: 0
+					.main--stages__title
+						flex-wrap: wrap
+						flex-direction: row
+					&::after
+						content: ''
+						display: block
+						background-image: url(../img/burnedstar2_mob.png)
+						background-repeat: no-repeat
+						background-position: center center
+						background-size: 284px 72px
+						width: 284px
+						height: 82px
+						margin: 0 auto
+				&:first-child
+					&::after
+						content: ''
+						display: block
+						background-image: url(../img/burnedstar1_mob.png)
+						background-repeat: no-repeat
+						background-position: center center
+						background-size: 284px 72px
+						width: 284px
+						height: 82px
+						margin: 0 auto
+			&__title 
+				align-items: center
+				justify-content: center
+				img
+					max-width: 45px
+					width: 45px
+			&__text 
+				min-height: 320px
+				span
+					font-size: 20px
+					padding: 45px 50px 105px
+		&--planets
+			.h2
+				margin-bottom: 25px
+		&--pets
+			&__slide
+				&.is-active
+					img
+						&:not(.hidden)
+							transition: opacity 0s
+		&--start
+			&__wrapper
+				gap: 20px
+		&--follow
+			&__wrapper
+				.h2 
+					margin-bottom: 20px
+			&__social 
+				margin-bottom: 50px
+
+			&__image 
+				max-width: 235px
+		&--how
+			&__plan
+				flex-direction: column
+				gap: 100px
+			.how__item
+				width: 100%
+				.how__subitem
+					width: 100%
+					flex-direction: column
+					gap: 40px
+				span.how__line
+					transform: rotate(90deg)
+					padding: 20px
+				&:has(.how__subitem.right)
+					.right
+						flex-direction: column-reverse
+						position: relative
+						transform: none
+						.how__lines
+							position: relative
+							transform: none
+							rotate: -90deg
+							padding: 20px
+	.footer
+		padding-top: 0
+		padding-bottom: 18px
+		&:before
+			background-image: url(../img/planet_footer_mob.png)
+			background-size: 343px 182px
+			width: 343px
+			height: 240px
+		&__logo
+			.logo
+				max-width: 233px
+				width: 233px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	body
+		background-image: none
+	.header
+		&--wrapper
+			&__menu
+				min-width: 100%
+				background-size: 100% 90%
+				height: calc(100vh - 45px)
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.main
+		&--stages
+			&__item
+				gap: 15px
+		&--start
+			&__wrapper
+				.h2
+					font-size: 30px 
+		&--follow
+			.container
+				&:before
+					display: none
+	.footer 
+		.container
+			&:before, &::after
+				display: none
+		&__wrapper 
+			gap: 15px
+		&__contacts 
+			a
+				margin-bottom: 15px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
+@media (max-width: 1200px)
+	.roadmap
+		.roadmap-item
+			.content
+				img
+					width: 120px
+					height: 120px
+				
+		.row
+			.col-md-6
+				&:last-child
+					.content
+						width: 100%
+						img
+							width: 200px
+
+@media (max-width: 992px)
+	.roadmap
+		padding: 60px 0
+		
+		.roadmap-block
+			h3
+				font-size: 20px
+				margin-bottom: 40px
+				
+		.roadmap-item
+			padding-left: 60px
+			margin-bottom: 40px
+			
+			.content
+				width: 100%
+				h4
+					font-size: 18px
+				p
+					font-size: 14px
+					
+			&:last-child
+				.content
+					img
+						width: 100%
+						max-width: 250px
+
+@media (max-width: 768px)
+	.roadmap
+		.row
+			flex-direction: column
+			gap: 60px
+			.col-md-6
+				width: 100% !important
+		.roadmap-block
+			margin-bottom: 0
+			
+			&:last-child
+				.content
+					width: 100%
+					img
+						width: 100%
+						max-width: 250px
+						
+		.roadmap-item
+			.content
+				width: 100%
+				flex-direction: column
+				img
+					width: 100px
+					height: 100px
+
+@media (max-width: 576px)
+	.roadmap
+		padding: 40px 0
+		
+		.roadmap-block
+			h3
+				font-size: 18px
+				margin-bottom: 30px
+				
+		.roadmap-item
+			padding-left: 50px
+			padding-top: 30px
+			margin-bottom: 30px
+			
+			.icon
+				width: 30px
+				height: 30px
+				
+				.stage
+					padding: 2px 8px
+					font-size: 12px
+					border-width: 1px
+				
+				&:after
+					width: 15px
+					height: 15px
+					background-size: 15px 15px
+					bottom: -15px
+			
+			.content
+				width: 100%
+				h4
+					font-size: 16px
+					margin-bottom: 8px
+				p
+					font-size: 13px
+					line-height: 1.4
+				
+			&:first-child
+				.content
+					gap: 15px
+
