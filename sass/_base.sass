@@ -376,7 +376,7 @@ button
 			margin: 0 auto
 			.menu
 				display: flex
-				gap: 67px
+				gap: 15px
 				align-items: center
 		&__social
 			display: flex
@@ -748,12 +748,18 @@ button
 					display: flex
 					justify-content: center
 					align-items: center
+					.h2
+						text-transform: uppercase
+						font-weight: bold
 				&__text
 					max-width: 100%
+					font-size: 25px
 				&__plan
 					display: flex
 					flex: 1
 					padding-top: 20vw
+					text-transform: uppercase
+
 					span.how
 						&__line
 							svg
@@ -771,7 +777,7 @@ button
 							align-items: center
 							text-align: center
 							&.right
-								transform: translate(100%,-100%)
+								transform: translate(86%,-117%)
 								position: absolute
 								top: 0
 								right: 0
@@ -795,15 +801,164 @@ button
 								max-height: 100%
 								height: 200px
 								img
-									max-height: 100%
+									max-height: 220px
+									min-width: 220px
 									margin: auto
+							span.how__line
+								width: max-content
 							&:has(svg)
 								.how__item--image
-									width: 60%
 									align-content: center
 									
 								svg
 									width: 110%
+.roadmap
+	padding: 100px 0
+	background: $accent
+    
+	.section-title
+		text-align: center
+		color: $white
+		margin-bottom: 60px
+        
+	.roadmap-block
+		height: 100%
+		h3
+			color: $pink
+			font-size: 40px
+			padding-left: 40px
+			margin-bottom: 20px
+			text-align: left
+            
+	.roadmap-items
+		position: relative
+		height: 100%
+		&:before
+			content: ''
+			position: absolute
+			left: 19px
+			top: 0
+			height: 100%
+			width: 2px
+			background: rgba($white, 0.2)
+		&.mg
+			.roadmap-item
+				img
+					width: 80% !important
+            
+	.roadmap-item
+		position: relative
+		padding-top: 60px
+		padding-left: 40px
+		margin-bottom: 60px
+		min-height: 300px
+		&:last-child
+			margin-bottom: 0
+		.icon
+			position: absolute
+			left: 0
+			top: 0
+			width: 40px
+			height: 40px
+			display: flex
+			align-items: center
+			justify-content: center
+			z-index: 1
+			&::after
+				content: ''
+				position: absolute
+				bottom: -25px
+				left: 50%
+				transform: translateX(-50%)
+				width: 25px
+				height: 25px
+				background-image: url(../img/star_stage.svg)
+				background-repeat: no-repeat
+				background-size: 25px 25px
+			.stage
+				display: inline-block
+				padding: 4px 12px
+				background: rgba($pink, 0.1)
+				border: 2px solid $pink
+				border-radius: 20px
+				color: $white
+				font-size: 14px
+				white-space: nowrap
+			.content
+				img
+					width: 150px
+					height: 150px
+					object-fit: contain
+			h4
+				color: $white
+				font-size: 20px
+				margin: 0 0 10px
+                
+			p
+				color: rgba($white, 0.6)
+				font-size: 16px
+				line-height: 1.5
+				margin: 0
+				
+
+	.row
+		display: flex
+		justify-content: space-between
+        
+		.col-md-6
+			width: 48%
+            
+			&:first-child // MILK PROTOCOL
+				.content
+					display: flex
+					gap: 30px
+					text-align: left
+                    
+					img
+						flex-shrink: 0
+						width: 150px
+						height: 150px
+						object-fit: contain
+                    
+					.text-content
+						padding-top: 20px
+                        
+					h4
+						color: $white
+						font-size: 20px
+						margin: 0 0 10px
+                        
+					p
+						color: rgba($white, 0.6)
+						font-size: 16px
+						line-height: 1.5
+						margin: 0
+                        
+			&:last-child // MILK GAME
+				.content
+					display: flex
+					flex-direction: column
+					text-align: left
+					align-items: flex-start
+                    
+					img
+						order: 2
+						margin-top: 20px
+						width: 250px
+						height: auto
+
+					h4
+						color: $white
+						font-size: 20px
+						margin: 0 0 10px
+
+					p
+						color: rgba($white, 0.6)
+						font-size: 16px
+						line-height: 1.5
+						margin: 0
+						width: 70%
+
 
 .footer 
 	padding-top: 300px
